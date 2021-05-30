@@ -1,11 +1,21 @@
 pluginManagement {
     repositories {
-        google()
         gradlePluginPortal()
+        google()
+        jcenter()
         mavenCentral()
     }
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.namespace == "com.android" || requested.id.name == "kotlin-android-extensions") {
+                useModule("com.android.tools.build:gradle:4.0.1")
+            }
+        }
+    }
 }
+rootProject.name = "KMMApp"
 
-rootProject.name = "KMM_Application"
+
 include(":androidApp")
 include(":shared")
+
