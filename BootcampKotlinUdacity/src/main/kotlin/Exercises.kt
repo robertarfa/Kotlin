@@ -3,13 +3,14 @@ import java.util.*
 fun main(args: Array<String>) {
     var fortune: String
     for (i in 1..10) {
-        fortune = getFortuneCookie()
+        fortune = getFortuneCookie(getBirthday())
         println("\nYour fortune is: $fortune")
-        if (fortune.contains("Take it easy")) break
+//        if (fortune.contains("Take it easy")) break;
     }
 }
 
-fun getFortuneCookie() : String{
+
+fun getFortuneCookie(birthday: Int) : String {
     val listOfFortune = listOf("You will have a great day!",
         "Things will go well for you today.",
         "Enjoy a wonderful day of success.",
@@ -18,11 +19,21 @@ fun getFortuneCookie() : String{
         "Take it easy and enjoy life!",
         "Treasure your friends because they are your greatest fortune.")
 
+    val index = when(birthday){
+        in 1..5 -> 0
+        10, 12 -> 3
+        20 -> 6
+        else ->birthday.rem(listOfFortune.size)
+    }
+    return listOfFortune[index]
+
+
+}
+
+fun getBirthday(): Int {
     print("Enter your birthday:")
 
-    val birthday = readLine()?.toIntOrNull() ?: 2
-
-    return listOfFortune[birthday.rem(listOfFortune.size)]
+    return readLine()?.toIntOrNull() ?: 2
 }
 
 fun dayOfWeek(){
