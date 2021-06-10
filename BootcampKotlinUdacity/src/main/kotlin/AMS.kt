@@ -3,16 +3,28 @@ import java.util.*
 fun main(args: Array<String>) {
     println("Hello World =)")
 //    println("${args[0]}")
-//    feedTheFish()
-    fitMoreFish(10.0, listOf(3,3,3))
-    fitMoreFish(8.0, listOf(2,2,2), hasDecoration = false)
-    fitMoreFish(9.0, listOf(1,1,3), 3)
-    fitMoreFish(10.0, listOf(), 7, true)
+   feedTheFish()
+//    fitMoreFish(8.0, listOf(2,2,2), hasDecoration = false)
 }
 
-fun shouldChangeWater(day: String,temperature: Int = 22,dirty: Int = 20) : Boolean{
-    return true
+fun shouldChangeWater(
+    day: String,
+    temperature: Int = 22,
+    dirty: Double = getDirtySensorReading()
+) : Boolean{
+    fun isTooHot(temperature: Int) = temperature > 30;
+    fun isDirty(dirty: Double) = dirty > 30;
+    fun isSunday(day: String) = day.uppercase() == "SUNDAY"
+
+    return when{
+        isTooHot(temperature) -> true
+        isDirty(dirty) -> true
+        isSunday(day) -> true
+        else -> false
+    }
 }
+
+fun getDirtySensorReading() = Math.random() * 1000
 
 fun feedTheFish(){
     val day = randomDay()
