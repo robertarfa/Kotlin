@@ -3,11 +3,11 @@ package classes
 import java.util.*
 
 fun main(args: Array<String>) {
-    var fortune: String
-    for (i in 1..10) {
+    var fortune: String = ""
+    while (!fortune.contains("Take it easy")) {
         fortune = getFortuneCookie(getBirthday())
         println("\nYour fortune is: $fortune")
-//        if (fortune.contains("Take it easy")) break;
+       // if (fortune.contains("Take it easy")) break;
     }
 }
 
