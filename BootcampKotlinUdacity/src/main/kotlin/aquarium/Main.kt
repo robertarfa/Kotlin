@@ -7,14 +7,26 @@ fun main(args: Array<String>) {
 private fun buildAquarium(){
     //same thing as new keyword
     // kotlin writes a get, even though we didn't do it
-    val myAquarium = Aquarium()
+//    val myAquarium = Aquarium()
 
-    println("Length: ${myAquarium.length} " +
-            "Width: ${myAquarium.width} " +
-            "Height: ${myAquarium.height}")
+//    println("myAquarium -> Length: ${myAquarium.length} " +
+//            "Width: ${myAquarium.width} " +
+//            "Height: ${myAquarium.height}")
+//    println("Volume myAquarium ${myAquarium.volume} liters")
 
-    myAquarium.height = 80
-    println("Height: ${myAquarium.height} cm")
+//    myAquarium.height = 80
+//    println("myAquarium newHeight: ${myAquarium.height} cm")
+//    println("Volume with newHeight myAquarium ${myAquarium.volume} liters")
 
-    println("Volume ${myAquarium.volume} liters")
+    val smallAquarium = Aquarium(width = 15,height = 30,length = 12)
+    println("smallAquarium -> Length: ${smallAquarium.length} " +
+            "Width: ${smallAquarium.width} " +
+            "Height: ${smallAquarium.height}")
+    println("Volume smallAquarium ${smallAquarium.volume} liters")
+
+    val myAquarium2 = Aquarium(numberOfFish = 9)
+    println("smallAquarium2 -> Length: ${myAquarium2.length} " +
+            "Width: ${myAquarium2.width} " +
+            "Height: ${myAquarium2.height}")
+    println("Volume smallAquarium2 ${myAquarium2.volume} liters")
 }
