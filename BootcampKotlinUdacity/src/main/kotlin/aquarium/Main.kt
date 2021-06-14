@@ -19,13 +19,13 @@ private fun buildAquarium(){
 //    println("Volume with newHeight myAquarium ${myAquarium.volume} liters")
 
     val smallAquarium = Aquarium(width = 15,height = 30,length = 12)
-    println("smallAquarium -> Length: ${smallAquarium.length} " +
+    println("smallAquarium based on aquarium size -> Length: ${smallAquarium.length} " +
             "Width: ${smallAquarium.width} " +
             "Height: ${smallAquarium.height}")
     println("Volume smallAquarium ${smallAquarium.volume} liters")
 
     val myAquarium2 = Aquarium(numberOfFish = 9)
-    println("smallAquarium2 -> Length: ${myAquarium2.length} " +
+    println("smallAquarium2 based on the number of fish -> Length: ${myAquarium2.length} " +
             "Width: ${myAquarium2.width} " +
             "Height: ${myAquarium2.height}")
     println("Volume smallAquarium2 ${myAquarium2.volume} liters")
