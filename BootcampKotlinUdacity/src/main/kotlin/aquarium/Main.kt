@@ -2,6 +2,7 @@ package aquarium
 
 fun main(args: Array<String>) {
     buildAquarium()
+    makeFish()
 }
 
 private fun buildAquarium(){
@@ -30,3 +31,18 @@ private fun buildAquarium(){
             "Height: ${myAquarium2.height}")
     println("Volume smallAquarium2 ${myAquarium2.volume} liters")
 }
+
+fun feedFish(fish: FishAction){
+    fish.eat()
+}
+
+fun makeFish(){
+    val shark = Shark()
+    val pleco = Plecostomus()
+
+    println("Shark: ${shark.color} Plecostomus: ${pleco.color}")
+
+    shark.eat()
+    pleco.eat()
+}
+

@@ -3,7 +3,7 @@ package classes.book
 open class Book(val title: String, val author: String) {
 
     private var currentPage: Int = 1
-    fun readPage(){
+    open fun readPage(){
         currentPage++
     }
 }
