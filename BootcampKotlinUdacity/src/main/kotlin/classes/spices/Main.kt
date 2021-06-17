@@ -8,7 +8,7 @@ fun main(args: Array<String>){
     // Creates new spice object
     val newSpice = Spice("cayenne", spiciness = "spicy")
 
-    // List of spices
+    // Listseal of spices
     val spiceList  = listOf(
         Spice("curry", "mild"),
         Spice("pepper", "medium"),
