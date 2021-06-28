@@ -1,5 +1,6 @@
 package com.example.calculadora
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
@@ -19,9 +20,13 @@ class MainActivity : AppCompatActivity() {
 
             val faltas = Integer.parseInt(faltas.text.toString())
 
-            when{
-                media >= 6 && faltas <=10 -> resultado.setText("Aluno foi aprovado, nota final $media e faltas $faltas")
-                else ->  resultado.setText("Aluno foi reprovado, nota final $media e faltas $faltas")
+          if(media >= 6 && faltas <=10) {
+
+              resultado.setText("Aluno foi aprovado, nota final $media e faltas $faltas")
+              resultado.setTextColor(Color.GREEN)
+          } else {
+                    resultado.setText("Aluno foi reprovado, nota final $media e faltas $faltas")
+                resultado.setTextColor(Color.RED)
             }
         }
     }
